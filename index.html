@@ -46,58 +46,44 @@
         
         <!-- Main Games Section -->
         <main class="main-games">
-            <!-- Game Cards -->
-            <div class="game-cards">
-                <!-- Cosmic Pirates -->
-                <div class="game-card pink-border">
-                    <div class="card-content">
-                        <div class="game-icon">🚀</div>
-                        <div class="game-art cosmic-pirates">
-                            <div class="space-scene">
-                                <div class="planet"></div>
-                                <div class="pirate-ship">🛸</div>
-                                <div class="stars-small"></div>
-                            </div>
-                        </div>
-                        <h3 class="game-title">COSMIC<br>PIRATES</h3>
-                        <button class="play-btn">PLAY NOW</button>
-                    </div>
-                </div>
-                
-                <!-- Cowboy Shootout -->
-                <div class="game-card cyan-border">
-                    <div class="card-content">
-                        <div class="game-icon">🤠</div>
-                        <div class="game-art cowboy-shootout">
-                            <div class="western-scene">
-                                <div class="cowboy cowboy1">🤠</div>
-                                <div class="cowboy cowboy2">🤠</div>
-                                <div class="bullet">•</div>
-                                <div class="cactus">🌵</div>
-                                <div class="lobby-indicator">
-                                    <div class="online-count">Online: <span id="cowboy-online">0</span></div>
-                                    <div class="waiting-count">Waiting: <span id="cowboy-waiting">0</span></span></div>
+            <!-- Featured Game -->
+            <div class="featured-game-section">
+                <h2 class="section-title">🎮 FEATURED GAME</h2>
+                <div class="main-game-card">
+                    <!-- Cowboy Shootout -->
+                    <div class="game-card cowboy-main cyan-border">
+                        <div class="card-content">
+                            <div class="game-icon">🤠</div>
+                            <div class="game-art cowboy-shootout">
+                                <div class="western-scene">
+                                    <div class="cowboy cowboy1">🤠</div>
+                                    <div class="cowboy cowboy2">🤠</div>
+                                    <div class="bullet">•</div>
+                                    <div class="cactus">🌵</div>
+                                    <div class="lobby-indicator">
+                                        <div class="online-count">Online: <span id="cowboy-online">0</span></div>
+                                        <div class="waiting-count">Waiting: <span id="cowboy-waiting">0</span></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <h3 class="game-title">COWBOY<br>SHOOTOUT</h3>
-                        <button class="play-btn" onclick="joinCowboyLobby()">JOIN LOBBY</button>
-                    </div>
-                </div>
-                
-                <!-- Neon Speedways -->
-                <div class="game-card green-border">
-                    <div class="card-content">
-                        <div class="game-icon">🏎️</div>
-                        <div class="game-art neon-speedways">
-                            <div class="race-scene">
-                                <div class="car">🏎️</div>
-                                <div class="neon-track"></div>
-                                <div class="speed-lines"></div>
+                            <h3 class="game-title">COWBOY SHOOTOUT</h3>
+                            <p class="game-description">1v1 Real-time multiplayer western duel. Quick reflexes and strategic bullet management!</p>
+                            <div class="game-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Players:</span>
+                                    <span class="stat-value">2 (1v1)</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Mode:</span>
+                                    <span class="stat-value">Real-time</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Difficulty:</span>
+                                    <span class="stat-value">Skill-based</span>
+                                </div>
                             </div>
+                            <button class="play-btn main-play-btn" onclick="showMatchmakingModal()">🎮 PLAY NOW</button>
                         </div>
-                        <h3 class="game-title">NEON<br>SPEEDWAYS</h3>
-                        <button class="play-btn">PLAY NOW</button>
                     </div>
                 </div>
             </div>
@@ -126,33 +112,33 @@
             </div>
         </main>
         
-        <!-- Featured Games -->
-        <section class="featured-games">
-            <h2 class="section-title">FEATURED GAMES</h2>
-            <div class="featured-grid">
-                <div class="featured-item">
-                    <div class="featured-icon">❄️</div>
-                    <span>WINTER WARRIOR</span>
+        <!-- Game Instructions -->
+        <section class="game-instructions">
+            <h2 class="section-title">🎮 HOW TO PLAY</h2>
+            <div class="instructions-grid">
+                <div class="instruction-item">
+                    <div class="instruction-icon">←→</div>
+                    <span class="instruction-text">Move left/right</span>
                 </div>
-                <div class="featured-item">
-                    <div class="featured-icon">🔮</div>
-                    <span>CRYSTAL QUEST</span>
+                <div class="instruction-item">
+                    <div class="instruction-icon">↑</div>
+                    <span class="instruction-text">Jump</span>
                 </div>
-                <div class="featured-item">
-                    <div class="featured-icon">🌨️</div>
-                    <span>BLIZZARD BATTLE</span>
+                <div class="instruction-item">
+                    <div class="instruction-icon">SPACE</div>
+                    <span class="instruction-text">Shoot</span>
                 </div>
-                <div class="featured-item">
-                    <div class="featured-icon">🧊</div>
-                    <span>ARCTIC ADVENTURES</span>
+                <div class="instruction-item">
+                    <div class="instruction-icon">💔</div>
+                    <span class="instruction-text">3 Lives each</span>
                 </div>
-                <div class="featured-item">
-                    <div class="featured-icon">⚡</div>
-                    <span>STORM SURGE</span>
+                <div class="instruction-item">
+                    <div class="instruction-icon">💥</div>
+                    <span class="instruction-text">6 Bullets max</span>
                 </div>
-                <div class="featured-item">
-                    <div class="featured-icon">🏔️</div>
-                    <span>MOUNTAIN MADNESS</span>
+                <div class="instruction-item">
+                    <div class="instruction-icon">❤️</div>
+                    <span class="instruction-text">Collect hearts</span>
                 </div>
             </div>
         </section>
@@ -172,6 +158,7 @@
         </footer>
     </div>
     
+    <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

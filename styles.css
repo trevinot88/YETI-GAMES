@@ -217,17 +217,89 @@ body {
 /* Main Games */
 .main-games {
     display: flex;
-    gap: 30px;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 50px;
 }
 
-.game-cards {
+.featured-game-section {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.main-game-card {
     display: flex;
-    gap: 20px;
-    flex: 1;
-    flex-wrap: wrap;
     justify-content: center;
+    margin: 30px 0;
+}
+
+.cowboy-main {
+    width: 400px;
+    height: 500px;
+    padding: 30px;
+}
+
+.cowboy-main .game-description {
+    color: #A8E6FF;
+    font-size: 1rem;
+    margin: 20px 0;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 25px 0;
+    padding: 15px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.stat-item {
+    text-align: center;
+    flex: 1;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #A8E6FF;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #00FFFF;
+    text-shadow: 0 0 8px #00FFFF;
+}
+
+.main-play-btn {
+    font-size: 1.3rem;
+    padding: 20px 50px;
+    margin-top: 25px;
+    background: linear-gradient(145deg, #00FF80, #00CC66) !important;
+    color: #000000 !important;
+    font-weight: 900;
+    text-shadow: none !important;
+    box-shadow: 0 8px 30px rgba(0, 255, 128, 0.6), 0 0 25px rgba(0, 204, 102, 0.4);
+    border: 2px solid #00FF80;
+    animation: pulseGlow 2s infinite;
+}
+
+.main-play-btn:hover {
+    background: linear-gradient(145deg, #00CC66, #00FF80) !important;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 40px rgba(0, 255, 128, 0.8), 0 0 35px rgba(0, 204, 102, 0.6);
+}
+
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 8px 30px rgba(0, 255, 128, 0.6), 0 0 25px rgba(0, 204, 102, 0.4); }
+    50% { box-shadow: 0 8px 30px rgba(0, 255, 128, 0.9), 0 0 35px rgba(0, 204, 102, 0.7); }
 }
 
 /* Game Cards */
@@ -286,35 +358,6 @@ body {
 }
 
 /* Game Art Scenes */
-.cosmic-pirates {
-    background: linear-gradient(135deg, #000428 0%, #004e92 100%);
-}
-
-.space-scene {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.planet {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(145deg, #ff6b6b, #ee5a24);
-    border-radius: 50%;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
-}
-
-.pirate-ship {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    font-size: 1.5rem;
-    animation: float 3s ease-in-out infinite;
-}
-
 .cowboy-shootout {
     background: linear-gradient(135deg, #8B4513 0%, #CD853F 50%, #F4A460 100%);
     border: 2px solid #8B4513;
@@ -399,69 +442,6 @@ body {
     50% { transform: rotate(2deg); }
 }
 
-.rune-scene {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.rune {
-    font-size: 1.8rem;
-    color: #00ffff;
-    position: absolute;
-    animation: mystical 4s ease-in-out infinite;
-}
-
-.rune1 { top: 20px; animation-delay: 0s; }
-.rune2 { left: 20px; top: 50%; animation-delay: 1.3s; }
-.rune3 { right: 20px; top: 50%; animation-delay: 2.6s; }
-
-.neon-speedways {
-    background: linear-gradient(135deg, #000000 0%, #434343 100%);
-}
-
-.race-scene {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.car {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    font-size: 1.5rem;
-    animation: race 2s linear infinite;
-}
-
-.neon-track {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #00ff80, #00ffff);
-    box-shadow: 0 0 10px #00ff80;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-}
-
-@keyframes mystical {
-    0%, 100% { opacity: 0.5; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.2); }
-}
-
-@keyframes race {
-    0% { transform: translateX(0px); }
-    100% { transform: translateX(120px); }
-}
-
 .game-title {
     font-size: 1.4rem;
     font-weight: 700;
@@ -494,14 +474,71 @@ body {
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
 }
 
-/* High Scores */
+/* Game Instructions */
+.game-instructions {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.instructions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.instruction-item {
+    background: rgba(26, 42, 108, 0.3);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.instruction-item:hover {
+    transform: translateY(-5px);
+    background: rgba(138, 43, 226, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 255, 255, 0.4);
+    border-color: #00FFFF;
+}
+
+.instruction-icon {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00FFFF;
+    text-shadow: 0 0 10px #00FFFF;
+    background: rgba(0,0,0,0.3);
+    padding: 10px 15px;
+    border-radius: 10px;
+    min-width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+}
+
+.instruction-text {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+}
 .high-scores {
-    width: 220px;
+    width: 320px;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
     padding: 20px;
     height: fit-content;
-    margin-left: auto;
+    margin: 20px auto;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
 }
 
 .scores-header {

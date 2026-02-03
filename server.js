@@ -22,7 +22,15 @@ const server = http.createServer((req, res) => {
     console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
     
     let filePath = '.' + req.url;
-    if (filePath === './') {
+    
+    // Handle cowboy-shootout game routes
+    if (req.url.startsWith('/cowboy-game')) {
+        // Redirect /cowboy-game to the actual game files
+        filePath = './cowboy-shootout/public' + req.url.replace('/cowboy-game', '');
+        if (filePath === './cowboy-shootout/public/') {
+            filePath = './cowboy-shootout/public/index.html';
+        }
+    } else if (filePath === './') {
         filePath = './index.html';
     }
     
