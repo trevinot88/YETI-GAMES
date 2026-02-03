@@ -315,8 +315,88 @@ body {
     animation: float 3s ease-in-out infinite;
 }
 
-.ancient-runes {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+.cowboy-shootout {
+    background: linear-gradient(135deg, #8B4513 0%, #CD853F 50%, #F4A460 100%);
+    border: 2px solid #8B4513;
+    position: relative;
+}
+
+.western-scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cowboy {
+    font-size: 1.8rem;
+    position: absolute;
+    bottom: 20px;
+    animation: gunslinger 3s ease-in-out infinite;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+}
+
+.cowboy1 {
+    left: 20px;
+    animation-delay: 0s;
+}
+
+.cowboy2 {
+    right: 20px;
+    animation-delay: 1.5s;
+    transform: scaleX(-1);
+}
+
+.bullet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1rem;
+    color: #FFD700;
+    animation: bulletSpin 2s linear infinite;
+    text-shadow: 0 0 10px #FFD700;
+}
+
+.cactus {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    animation: sway 4s ease-in-out infinite;
+}
+
+.lobby-indicator {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-size: 0.7rem;
+    color: #00FF00;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    font-family: monospace;
+}
+
+@keyframes gunslinger {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(-2deg); }
+}
+
+@keyframes bulletSpin {
+    0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+    50% { transform: translate(-50%, -50%) rotate(180deg) scale(1.2); }
+    100% { transform: translate(-50%, -50%) rotate(360deg) scale(1); }
+}
+
+@keyframes sway {
+    0%, 100% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
 }
 
 .rune-scene {
