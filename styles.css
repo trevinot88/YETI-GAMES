@@ -159,96 +159,19 @@ body {
     margin-bottom: 30px;
 }
 
-.yeti-mascot {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    margin-bottom: 15px;
+.logo-image {
+    width: 200px;
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 25px rgba(0,0,0,0.4));
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.yeti-body {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(145deg, #f0f8ff, #e6f3ff);
-    border-radius: 50%;
-    position: relative;
-    margin: 20px auto;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-}
-
-.yeti-horns {
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.horn {
-    width: 15px;
-    height: 20px;
-    background: linear-gradient(145deg, #ffd700, #ffed4e);
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    position: absolute;
-    top: 0;
-}
-
-.horn.left { left: -25px; transform: rotate(-15deg); }
-.horn.right { right: -25px; transform: rotate(15deg); }
-
-.yeti-face {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.yeti-eyes {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 8px;
-}
-
-.eye {
-    width: 8px;
-    height: 8px;
-    background: #000;
-    border-radius: 50%;
-}
-
-.yeti-mouth {
-    width: 12px;
-    height: 6px;
-    background: #000;
-    border-radius: 0 0 12px 12px;
-    margin: 0 auto;
-}
-
-.controller {
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 20px;
-}
-
-.logo-text {
-    text-align: center;
-    font-weight: 800;
-    text-shadow: 0 0 20px rgba(255,255,255,0.5);
-}
-
-.yeti {
-    display: block;
-    font-size: 2.5rem;
-    color: #ffffff;
-    letter-spacing: 2px;
-}
-
-.games {
-    display: block;
-    font-size: 2.5rem;
-    color: #00ffff;
-    letter-spacing: 2px;
+.logo-image:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 15px 35px rgba(0,0,0,0.5)) brightness(1.1);
 }
 
 /* Navigation */
